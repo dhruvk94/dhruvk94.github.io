@@ -7,12 +7,56 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+  
+  <script type="text/javascript">
+	var app = angular.module('app',['ngRoute']);
+
+	app.config(function($routeProvider){
+	$routeProvider.when("/about",{templateUrl:'about.html'})
+	.when("/experience",{templateUrl:'experience.html'})
+	.when("/skills",{templateUrl:'skills.html'})
+	.when("/projects",{templateUrl:'projects.html'})
+	.when("/contact",{templateUrl:'contact.html'});
+		});
+
+	app.controller('mainController', function($scope,$http){
+		$scope.projectNames = ['INFY RETAIL','MUSIC RECOMMENDATION ENGINE'];
+		
+		$scope.init = function(){
+			$scope.aboutmeCheck = true;
+			
+		}
+		$scope.aboutme = function(){
+			$scope.aboutmeCheck = true;
+		}
+		
+		$scope.projects = function(){
+			$("p").hide();
+			$scope.aboutmeCheck = false;
+		}
+		
+		$scope.showProject = function(){
+			
+//				$(this).next().slideToggle("slow");
+				$("p").slideToggle("slow");
+		}
+	});	
+	
+	
+		
+	
+	
+  </script>
+
 </head>
 
 <style type="text/css">
 	.navbar-brand{
 		font-size : xx-large;
 		font-family:verdana;
+		color : #182153;
 	}
 
 	.jumbotron{
@@ -21,50 +65,66 @@
         -o-background-size: cover;
         background-size: cover;
 	}
-	.left-half{
+/* 	.left-half{
 		float: left;
-		/*width:50%;
-		background-color:#3b3b3b;
-		color: white;
-		height: 80%;*/
 		width: 50%;
 		height: 80%;
-	}
+	}	
 
 	.right-half{
 		width:50%;
 		height:80%;
 		float: right;
-	}
+		color:#182153;
+	} */
 
 	.sub-heading{
 		font-weight: bold;
 		font-family: verdana;
+		color : #182153;
+	}
+	.content{
+		color : #182153;
+	}
+		
+	.nav.navbar-nav.navbar-right li a {
+		/* color: #182153; */
 	}
 	
+	.navbar-default .navbar-brand {
+    	color: #182153;
+	}
+	
+	.table {
+	    border-radius: 5px;
+	    width: 50%;
+	    margin: 0px auto;
+	    float: none;
+	}
 </style>
 
-<body>
+<body ng-app="app" ng-controller="mainController" ng-init="init()">
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Dhruv Khatri</a>
+    <a class="navbar-brand" href="#">&nbsp;&nbsp;Dhruv Khatri</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li class="active"><a href="#">ABOUT</a></li>
+      <li class="active"><a href="#" ng-click = "aboutme()">ABOUT</a></li>
       <li><a href="#">EXPERIENCE</a></li>
       <li><a href="#">SKILLS</a></li>
-      <li><a href="#">PROJECTS</a></li>
+      <li><a href="#projects" ng-click="projects()">PROJECTS</a></li>
       <li><a href="#">CONTACT</a></li>
     </ul>
   </div>
 </nav>
-<div class="jumbotron">
+<div class="jumbotron" ng-if="aboutmeCheck">
 <div class="container">
-	<div class="left-half">
-		<img src="my_pic.jpg" style="width: 100%;height: 470px;" alt="some text" />
+<div class="row">
+	<div class="col-lg-4 col-ld-offset-2 col-md-4 col-md-offset-2" >
+		<img src="my_pic.jpg" style="width: 100%;height: 470px;" />
 	</div>
-	<div class="right-half">
+	<div class="col-lg-4 col-md-4">
 		<div class="well well-lg">
 		<h2>Dhruv Khatri</h2>
 		<h3>System Engineer at Infosys</h3><br>
@@ -81,7 +141,12 @@
 		<div class="content">January 28th, 1994</div><br><br>
 		</div>
 	</div>
+	<div class="col-lg-2 col-md-2"></div>
 </div>
 </div>
+</div>
+<div ng-view></div>
+
+
 </body>
 </html>
