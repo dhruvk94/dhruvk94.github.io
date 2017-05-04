@@ -21,16 +21,12 @@
 	.when("/contact",{templateUrl:'contact.html'});
 		});
 
-	app.controller('mainController', function($scope,$http){
+		app.controller('mainController', function($scope,$http){
 		$scope.initial = function(){
 			$scope.aboutmeCheck = true;
 			$http.get('project.json').success(function(data){
 				$scope.data = data;
 			});
-			
-		}
-		$scope.init = function(){
-			$scope.aboutmeCheck = true;
 			
 		}
 		$scope.aboutme = function(){
@@ -42,6 +38,10 @@
 			$scope.aboutmeCheck = false;
 		}
 		
+		$scope.experience = function(){
+			$("p").hide();
+			$scope.aboutmeCheck = false;
+		}
 		$scope.showProject = function(id){
 			$("#"+id).slideToggle("slow");
 		}
