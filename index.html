@@ -22,8 +22,13 @@
 		});
 
 	app.controller('mainController', function($scope,$http){
-		$scope.projectNames = ['INFY RETAIL','MUSIC RECOMMENDATION ENGINE'];
-		
+		$scope.initial = function(){
+			$scope.aboutmeCheck = true;
+			$http.get('project.json').success(function(data){
+				$scope.data = data;
+			});
+			
+		}
 		$scope.init = function(){
 			$scope.aboutmeCheck = true;
 			
