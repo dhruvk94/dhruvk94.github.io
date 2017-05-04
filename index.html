@@ -37,17 +37,10 @@
 			$scope.aboutmeCheck = false;
 		}
 		
-		$scope.showProject = function(){
-			
-//				$(this).next().slideToggle("slow");
-				$("p").slideToggle("slow");
+		$scope.showProject = function(id){
+			$("#"+id).slideToggle("slow");
 		}
 	});	
-	
-	
-		
-	
-	
   </script>
 
 </head>

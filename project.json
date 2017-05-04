@@ -1,0 +1,54 @@
+{"left":[{
+			"id":1,
+			"name" :"INFY RETAIL",
+			"descr" :"A single page web application to extract the top ten customers of the Infy Retail application using filters such as date range and amount spent. Customers could also be upgraded/downgraded by admin based on their profile",
+			"stack" :"AngularJS, Java, AJAX, Hibernate, Bootstrap" 
+		},
+		{
+			"id":2,
+			"name" :"MUSIC RECOMMENDATION ENGINE",
+			"descr" :"A web application in which we recommend songs and other users to a client from a large database based on certain factors (such as loudness and tempo of a song). The recommendation will also change dynamically on the basis of user’s interests.",
+			"stack" :"AngularJS, Java, AJAX, Hibernate, Bootstrap" 
+		},
+		{
+			"id":3,
+			"name" :"TOURS AND TRAVELS",
+			"descr" :"This is a graph-based user-friendly application in C++ where a user can plan his/her trip to any part of the world according to his preferences and optimizing the cost and time of the trip. The application also consisted options of phone recharge and ATM.",
+			"stack" :"AngularJS, Java, AJAX, Hibernate, Bootstrap" 
+		},
+		{
+			"id":4,
+			"name" :"DATA DICTIONARY1",
+			"descr" :"A web based application using JSP to generate the dictionary(variables and functions) of the source code input by the user.It also includes a feature of comparing two pieces of codes through Myers diff algorithm.",
+			"stack" :"AngularJS, Java, AJAX, Hibernate, Bootstrap" 
+		}
+	],
+	"right":[
+		{
+			"id":5,
+			"name" :"FOOD IMAGE RECOGNITION",
+			"descr" :"An android app which originally started with a MATLAB UI aimed at recognizing food images from a set of 50 categories by clicking a picture from the phone.The app also showed nutritional content for the food item recognized and the top five restaurants where the food item is available in Delhi.",
+			"stack" :"AngularJS, Java, AJAX, Hibernate, Bootstrap" 
+		},
+		{
+			"id":6,
+			"name" :"KNOW YOUR LEADERS",
+			"descr" :"A web application developed to know the preferred choices of people for the upcoming General Assembly Elections. It also provides the users with information about the candidates representing respective parties from the all the constituencies.",
+			"stack" :"AngularJS, Java, AJAX, Hibernate, Bootstrap" 
+		},
+		{
+			"id":7,
+			"name" :"MUSIC PLAYER",	
+			"descr" :"Application developed in visual C++ where the user can play songs present in the database and perform basic operations. Playlists can also be formed from the currently present songs in the file.",
+			"stack" :"AngularJS, Java, AJAX, Hibernate, Bootstrap" 
+		},
+		{
+			"id":8,
+			"name" :"DATA DICTIONARY",
+			"descr" :"A web based application using JSP to generate the dictionary(variables and functions) of the source code input by the user.It also includes a feature of comparing two pieces of codes through Myers diff algorithm.",
+			"stack" :"AngularJS, Java, AJAX, Hibernate, Bootstrap" 
+		}
+	]
+}
+
+
