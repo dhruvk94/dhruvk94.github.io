@@ -9,6 +9,17 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style type="text/css">
+  	object { 
+  		
+  	}
+  	.company_name{
+	  	text-decoration: underline;
+  	}
+  	
+  </style>    	
   
   <script type="text/javascript">
 	var app = angular.module('app',['ngRoute']);
@@ -18,34 +29,63 @@
 	.when("/experience",{templateUrl:'experience.html'})
 	.when("/skills",{templateUrl:'skills.html'})
 	.when("/projects",{templateUrl:'projects.html'})
+	.when("/resume",{templateUrl:'resume.html'})
 	.when("/contact",{templateUrl:'contact.html'});
 		});
 
-		app.controller('mainController', function($scope,$http){
+	app.controller('mainController', function($scope,$http){
 		$scope.initial = function(){
 			$scope.aboutmeCheck = true;
 			$http.get('project.json').success(function(data){
 				$scope.data = data;
 			});
-			
+			$(function(){
+			      $("#footer").load("footer.html"); 
+			});
 		}
 		$scope.aboutme = function(){
 			$scope.aboutmeCheck = true;
+			$(function(){
+			      $("#footer").load("footer.html"); 
+			});
 		}
 		
+		
+		$scope.skills = function(){
+			$scope.aboutmeCheck = false;
+			
+		}
+		$scope.resume = function(){
+			$scope.aboutmeCheck = false;
+			$(function(){
+			      $("#footer").load("footer.html"); 
+			});
+		}
 		$scope.projects = function(){
 			$("p").hide();
+			//$("p").slideToggle("slow");
 			$scope.aboutmeCheck = false;
+			$(function(){
+			      $("#footer").load("footer.html"); 
+			});
 		}
 		
 		$scope.experience = function(){
 			$("p").hide();
 			$scope.aboutmeCheck = false;
+			$(function(){
+			      $("#footer").load("footer.html"); 
+			});
 		}
 		$scope.showProject = function(id){
 			$("#"+id).slideToggle("slow");
 		}
 	});	
+	
+	
+		
+	
+	
   </script>
 
 </head>
@@ -109,9 +149,10 @@
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li class="active"><a href="#" ng-click = "aboutme()">ABOUT</a></li>
-      <li><a href="#">EXPERIENCE</a></li>
-      <li><a href="#">SKILLS</a></li>
+      <li><a href="#experience" ng-click="experience()">EXPERIENCE</a></li>
+      <li><a href="#skills" ng-click="skills()">SKILLS</a></li>
       <li><a href="#projects" ng-click="projects()">PROJECTS</a></li>
+      <li><a href="#resume" ng-click="resume()">RESUME</a></li>
       <li><a href="#">CONTACT</a></li>
     </ul>
   </div>
@@ -120,12 +161,11 @@
 <div class="container">
 <div class="row">
 	<div class="col-lg-4 col-ld-offset-2 col-md-4 col-md-offset-2" >
-		<img src="my_pic.jpg" style="width: 100%;height: 470px;" />
+		<img src="my_pic.jpg" style="width: 100%;height: 400px;" />
 	</div>
-	<div class="col-lg-4 col-md-4">
-		<div class="well well-lg">
+	<div class="col-lg-4 col-md-4 well well-sm">
 		<h2>Dhruv Khatri</h2>
-		<h3>System Engineer at Infosys</h3><br>
+		<h3>System Engineer at Infosys</h3>
 		<div class="sub-heading">Phone:</div>
 		<div class="content">+91-8447513103</div><br>
 		<div class="sub-heading">Email:</div>
@@ -136,15 +176,16 @@
 		Delhi-110092
 		</div><br>
 		<div class="sub-heading">Date of Birth:</div>
-		<div class="content">January 28th, 1994</div><br><br>
-		</div>
+		<div class="content">January 28th, 1994</div><br>
+	<!--  	</div>-->
 	</div>
 	<div class="col-lg-2 col-md-2"></div>
 </div>
+<div id="footer"></div> 
+
 </div>
 </div>
 <div ng-view></div>
-
 
 </body>
 </html>
