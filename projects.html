@@ -3,7 +3,7 @@
 		<span><i class="material-icons">assessment</i>
 
 		<a ng-click="showProject(project.id)">{{project.name}}</a></span>
-		<p id="{{project.id}}" class="well well-lg">
+		<p id="{{project.id}}" class="well well-lg" style="display: none;">
 			{{project.descr}}<br>Technologies used : {{project.stack}}
 		</p>
 
@@ -14,7 +14,7 @@
 	<div ng-repeat="project in data.right">
 		<i class="large material-icons">assessment</i>
 			<a ng-click="showProject(project.id)">{{project.name}}</a>
-			<p id="{{project.id}}" class="well well-lg">
+			<p id="{{project.id}}" class="well well-lg" style="display: none;">
 				{{project.descr}}<br> Technologies used : {{project.stack}}
 			</p>
 	</div>
