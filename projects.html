@@ -1,22 +1,24 @@
 <div class="col-md-4 col-md-offset-2">
- 	<div ng-repeat="project in data.left">
- 			<button class="btn btn-lg btn-primary"
-				ng-click="showProject(project.id)">{{project.name}}</button>
-			<p id = "{{project.id}}"class="well well-lg">{{project.descr}}<br>Technologies used :
-				{{project.stack}}</p>
-			
- </div> 
- </div>
- 
- <div class="col-md-4 ">
- 	<div ng-repeat="project in data.right">
- 			<button class="btn btn-lg btn-primary"
-				ng-click="showProject(project.id)">{{project.name}}</button>
-			<p id="{{project.id}}" class="well well-lg">{{project.descr}}<br> Technologies used :
-				{{project.stack}}</p>
-			
- </div> 
- </div>
+	<div ng-repeat="project in data.left">
+		<span><i class="material-icons">assessment</i>
+
+		<a ng-click="showProject(project.id)">{{project.name}}</a></span>
+		<p id="{{project.id}}" class="well well-lg">
+			{{project.descr}}<br>Technologies used : {{project.stack}}
+		</p>
+
+	</div>
+</div>
+
+<div class="col-md-4 ">
+	<div ng-repeat="project in data.right">
+		<i class="large material-icons">assessment</i>
+			<a ng-click="showProject(project.id)">{{project.name}}</a>
+			<p id="{{project.id}}" class="well well-lg">
+				{{project.descr}}<br> Technologies used : {{project.stack}}
+			</p>
+	</div>
+</div>
 <div class="col-md-2"></div>
-<hr/>
 <div id="footer"></div>
+<hr/>
